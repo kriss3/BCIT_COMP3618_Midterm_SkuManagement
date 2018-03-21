@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OrpSkuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BCIT.dbo.SKU_DB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SKU_DB">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedUTC" />
+            <PropertyRef Name="ChangedUTC" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Source" Type="nvarchar" MaxLength="100" />
+          <Property Name="Item Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Product" Type="nvarchar" MaxLength="50" />
+          <Property Name="Term" Type="int" />
+          <Property Name="InUse" Type="nvarchar" MaxLength="50" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="MfnFloorPrice" Type="money" />
+          <Property Name="LicenseTypeId" Type="int" />
+          <Property Name="SkuTypeId" Type="int" />
+          <Property Name="DiscountTypeId" Type="int" />
+          <Property Name="BaseSku" Type="nvarchar" MaxLength="64" />
+          <Property Name="SkuCategoryId" Type="int" />
+          <Property Name="SkuPrice" Type="money" />
+          <Property Name="MsrpPrice" Type="money" />
+          <Property Name="SkuCurrency" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CreatedUTC" Type="datetime2" Precision="3" Nullable="false" />
+          <Property Name="ChangedUTC" Type="datetime2" Precision="3" Nullable="false" />
+          <Property Name="OrpProductId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="OrpSkuModelStoreContainer">
+          <EntitySet Name="SKU_DB" EntityType="Self.SKU_DB" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SKU_DB].[ID] AS [ID], 
+    [SKU_DB].[Source] AS [Source], 
+    [SKU_DB].[Item Number] AS [Item Number], 
+    [SKU_DB].[Product] AS [Product], 
+    [SKU_DB].[Term] AS [Term], 
+    [SKU_DB].[InUse] AS [InUse], 
+    [SKU_DB].[product_id] AS [product_id], 
+    [SKU_DB].[MfnFloorPrice] AS [MfnFloorPrice], 
+    [SKU_DB].[LicenseTypeId] AS [LicenseTypeId], 
+    [SKU_DB].[SkuTypeId] AS [SkuTypeId], 
+    [SKU_DB].[DiscountTypeId] AS [DiscountTypeId], 
+    [SKU_DB].[BaseSku] AS [BaseSku], 
+    [SKU_DB].[SkuCategoryId] AS [SkuCategoryId], 
+    [SKU_DB].[SkuPrice] AS [SkuPrice], 
+    [SKU_DB].[MsrpPrice] AS [MsrpPrice], 
+    [SKU_DB].[SkuCurrency] AS [SkuCurrency], 
+    [SKU_DB].[CreatedBy] AS [CreatedBy], 
+    [SKU_DB].[CreatedUTC] AS [CreatedUTC], 
+    [SKU_DB].[ChangedUTC] AS [ChangedUTC], 
+    [SKU_DB].[OrpProductId] AS [OrpProductId]
+    FROM [dbo].[SKU_DB] AS [SKU_DB]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OrpSkuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SKU_DB">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedUTC" />
+            <PropertyRef Name="ChangedUTC" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Item_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Term" Type="Int32" />
+          <Property Name="InUse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="MfnFloorPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="LicenseTypeId" Type="Int32" />
+          <Property Name="SkuTypeId" Type="Int32" />
+          <Property Name="DiscountTypeId" Type="Int32" />
+          <Property Name="BaseSku" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="SkuCategoryId" Type="Int32" />
+          <Property Name="SkuPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MsrpPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SkuCurrency" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ChangedUTC" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrpProductId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="OrpSkuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SKU_DB" EntityType="Self.SKU_DB" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OrpSkuModelStoreContainer" CdmEntityContainer="OrpSkuEntities">
+          <EntitySetMapping Name="SKU_DB">
+            <EntityTypeMapping TypeName="OrpSkuModel.SKU_DB">
+              <MappingFragment StoreEntitySet="SKU_DB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Item_Number" ColumnName="Item Number" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="InUse" ColumnName="InUse" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="MfnFloorPrice" ColumnName="MfnFloorPrice" />
+                <ScalarProperty Name="LicenseTypeId" ColumnName="LicenseTypeId" />
+                <ScalarProperty Name="SkuTypeId" ColumnName="SkuTypeId" />
+                <ScalarProperty Name="DiscountTypeId" ColumnName="DiscountTypeId" />
+                <ScalarProperty Name="BaseSku" ColumnName="BaseSku" />
+                <ScalarProperty Name="SkuCategoryId" ColumnName="SkuCategoryId" />
+                <ScalarProperty Name="SkuPrice" ColumnName="SkuPrice" />
+                <ScalarProperty Name="MsrpPrice" ColumnName="MsrpPrice" />
+                <ScalarProperty Name="SkuCurrency" ColumnName="SkuCurrency" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedUTC" ColumnName="CreatedUTC" />
+                <ScalarProperty Name="ChangedUTC" ColumnName="ChangedUTC" />
+                <ScalarProperty Name="OrpProductId" ColumnName="OrpProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
