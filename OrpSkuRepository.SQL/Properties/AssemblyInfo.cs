@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OrpSkuRepository.SQL")]
+[assembly: AssemblyTitle("OrpSkuRepository.Sql")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OrpSkuRepository.SQL")]
+[assembly: AssemblyProduct("OrpSkuRepository.Sql")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cdadf458-a07e-488b-a9d6-94af9bdcddb3")]
+[assembly: Guid("1ee80658-96db-4a5c-a01a-a2cdb3ef2949")]
 
 // Version information for an assembly consists of the following four values:
 //

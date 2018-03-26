@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="15920f6d2e0c4c758dcef4be0db14ad3" Name="Diagram1">
-        <EntityTypeShape EntityType="OrpSkuModel.SKU_DB" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="4e7edd51c23441e4aa4c584694761f13" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="OrpSkuInventoryModel.SkuInventoryDb" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

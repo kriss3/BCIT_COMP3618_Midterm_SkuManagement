@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OrpSkuRepository.SQL
+namespace OrpSkuRepository.Sql
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OrpSkuEntities : DbContext
+    public partial class OrpSkuInventoryEntities : DbContext
     {
-        public OrpSkuEntities()
-            : base("name=OrpSkuEntities")
+        public OrpSkuInventoryEntities()
+            : base("name=OrpSkuInventoryEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace OrpSkuRepository.SQL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<SKU_DB> SKU_DB { get; set; }
+        public virtual DbSet<SkuInventoryDb> SkuInventoryDbs { get; set; }
     }
 }

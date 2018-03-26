@@ -34,8 +34,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.1\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -85,13 +101,34 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrpSkuRepository.Interface\OrpSkuRepository.Interface.csproj">
+      <Project>{3ece3832-b7a1-4cb0-8bce-1de11f51fda1}</Project>
+      <Name>OrpSkuRepository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrpSkuRepository.Sql\OrpSkuRepository.Sql.csproj">
+      <Project>{1ee80658-96db-4a5c-a01a-a2cdb3ef2949}</Project>
+      <Name>OrpSkuRepository.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrpSkuViewer.Presentation\OrpSkuViewer.Presentation.csproj">
+      <Project>{4a2152c9-406f-475c-98fa-9bf308f6db2e}</Project>
+      <Name>OrpSkuViewer.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrpSkuViewer.SharedObjects\OrpSkuViewer.SharedObjects.csproj">
+      <Project>{FFAD2A41-C72C-439E-B2AA-604D5A873155}</Project>
+      <Name>OrpSkuViewer.SharedObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

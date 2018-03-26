@@ -7,14 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OrpSkuRepository.SQL
+namespace OrpSkuRepository.Sql
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class SKU_DB
+    public partial class SkuInventoryDb
     {
         public int ID { get; set; }
+        public string Item_Description { get; set; }
+        public string Comment { get; set; }
         public string Source { get; set; }
         public string Item_Number { get; set; }
         public string Product { get; set; }

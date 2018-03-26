@@ -43,5 +43,15 @@
     <Compile Include="OrpSkuViewerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrpSkuRepository.Interface\OrpSkuRepository.Interface.csproj">
+      <Project>{3ECE3832-B7A1-4CB0-8BCE-1DE11F51FDA1}</Project>
+      <Name>OrpSkuRepository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrpSkuViewer.SharedObjects\OrpSkuViewer.SharedObjects.csproj">
+      <Project>{FFAD2A41-C72C-439E-B2AA-604D5A873155}</Project>
+      <Name>OrpSkuViewer.SharedObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

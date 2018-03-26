@@ -4,10 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OrpSkuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="OrpSkuInventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-warning 6002: The table/view 'BCIT.dbo.SKU_DB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="SKU_DB">
+warning 6002: The table/view '1AF9B3490B0AFD78D2BE3F6E8AEB2E7A_\ASSIGNMENTS\MIDTERMPROJECT\ORPSKUMIDTERM\ORPSKUREPOSITORY.SQL\SQLDB\LOCALORPSKUINVENTORYDB.MDF.dbo.SkuInventoryDb' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SkuInventoryDb">
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="CreatedBy" />
@@ -15,6 +15,8 @@ warning 6002: The table/view 'BCIT.dbo.SKU_DB' does not have a primary key defin
             <PropertyRef Name="ChangedUTC" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Item Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comment" Type="ntext" />
           <Property Name="Source" Type="nvarchar" MaxLength="100" />
           <Property Name="Item Number" Type="nvarchar" MaxLength="50" />
           <Property Name="Product" Type="nvarchar" MaxLength="50" />
@@ -35,38 +37,40 @@ warning 6002: The table/view 'BCIT.dbo.SKU_DB' does not have a primary key defin
           <Property Name="ChangedUTC" Type="datetime2" Precision="3" Nullable="false" />
           <Property Name="OrpProductId" Type="int" />
         </EntityType>
-        <EntityContainer Name="OrpSkuModelStoreContainer">
-          <EntitySet Name="SKU_DB" EntityType="Self.SKU_DB" store:Type="Tables" store:Schema="dbo">
+        <EntityContainer Name="OrpSkuInventoryModelStoreContainer">
+          <EntitySet Name="SkuInventoryDb" EntityType="Self.SkuInventoryDb" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [SKU_DB].[ID] AS [ID], 
-    [SKU_DB].[Source] AS [Source], 
-    [SKU_DB].[Item Number] AS [Item Number], 
-    [SKU_DB].[Product] AS [Product], 
-    [SKU_DB].[Term] AS [Term], 
-    [SKU_DB].[InUse] AS [InUse], 
-    [SKU_DB].[product_id] AS [product_id], 
-    [SKU_DB].[MfnFloorPrice] AS [MfnFloorPrice], 
-    [SKU_DB].[LicenseTypeId] AS [LicenseTypeId], 
-    [SKU_DB].[SkuTypeId] AS [SkuTypeId], 
-    [SKU_DB].[DiscountTypeId] AS [DiscountTypeId], 
-    [SKU_DB].[BaseSku] AS [BaseSku], 
-    [SKU_DB].[SkuCategoryId] AS [SkuCategoryId], 
-    [SKU_DB].[SkuPrice] AS [SkuPrice], 
-    [SKU_DB].[MsrpPrice] AS [MsrpPrice], 
-    [SKU_DB].[SkuCurrency] AS [SkuCurrency], 
-    [SKU_DB].[CreatedBy] AS [CreatedBy], 
-    [SKU_DB].[CreatedUTC] AS [CreatedUTC], 
-    [SKU_DB].[ChangedUTC] AS [ChangedUTC], 
-    [SKU_DB].[OrpProductId] AS [OrpProductId]
-    FROM [dbo].[SKU_DB] AS [SKU_DB]</DefiningQuery>
+    [SkuInventoryDb].[ID] AS [ID], 
+    [SkuInventoryDb].[Item Description] AS [Item Description], 
+    [SkuInventoryDb].[Comment] AS [Comment], 
+    [SkuInventoryDb].[Source] AS [Source], 
+    [SkuInventoryDb].[Item Number] AS [Item Number], 
+    [SkuInventoryDb].[Product] AS [Product], 
+    [SkuInventoryDb].[Term] AS [Term], 
+    [SkuInventoryDb].[InUse] AS [InUse], 
+    [SkuInventoryDb].[product_id] AS [product_id], 
+    [SkuInventoryDb].[MfnFloorPrice] AS [MfnFloorPrice], 
+    [SkuInventoryDb].[LicenseTypeId] AS [LicenseTypeId], 
+    [SkuInventoryDb].[SkuTypeId] AS [SkuTypeId], 
+    [SkuInventoryDb].[DiscountTypeId] AS [DiscountTypeId], 
+    [SkuInventoryDb].[BaseSku] AS [BaseSku], 
+    [SkuInventoryDb].[SkuCategoryId] AS [SkuCategoryId], 
+    [SkuInventoryDb].[SkuPrice] AS [SkuPrice], 
+    [SkuInventoryDb].[MsrpPrice] AS [MsrpPrice], 
+    [SkuInventoryDb].[SkuCurrency] AS [SkuCurrency], 
+    [SkuInventoryDb].[CreatedBy] AS [CreatedBy], 
+    [SkuInventoryDb].[CreatedUTC] AS [CreatedUTC], 
+    [SkuInventoryDb].[ChangedUTC] AS [ChangedUTC], 
+    [SkuInventoryDb].[OrpProductId] AS [OrpProductId]
+    FROM [dbo].[SkuInventoryDb] AS [SkuInventoryDb]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="OrpSkuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="SKU_DB">
+      <Schema Namespace="OrpSkuInventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SkuInventoryDb">
           <Key>
             <PropertyRef Name="ID" />
             <PropertyRef Name="CreatedBy" />
@@ -74,6 +78,8 @@ warning 6002: The table/view 'BCIT.dbo.SKU_DB' does not have a primary key defin
             <PropertyRef Name="ChangedUTC" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Item_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Source" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Item_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -94,19 +100,21 @@ warning 6002: The table/view 'BCIT.dbo.SKU_DB' does not have a primary key defin
           <Property Name="ChangedUTC" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="OrpProductId" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="OrpSkuEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="SKU_DB" EntityType="Self.SKU_DB" />
+        <EntityContainer Name="OrpSkuInventoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SkuInventoryDbs" EntityType="Self.SkuInventoryDb" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OrpSkuModelStoreContainer" CdmEntityContainer="OrpSkuEntities">
-          <EntitySetMapping Name="SKU_DB">
-            <EntityTypeMapping TypeName="OrpSkuModel.SKU_DB">
-              <MappingFragment StoreEntitySet="SKU_DB">
+        <EntityContainerMapping StorageEntityContainer="OrpSkuInventoryModelStoreContainer" CdmEntityContainer="OrpSkuInventoryEntities">
+          <EntitySetMapping Name="SkuInventoryDbs">
+            <EntityTypeMapping TypeName="OrpSkuInventoryModel.SkuInventoryDb">
+              <MappingFragment StoreEntitySet="SkuInventoryDb">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Item_Description" ColumnName="Item Description" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="Source" ColumnName="Source" />
                 <ScalarProperty Name="Item_Number" ColumnName="Item Number" />
                 <ScalarProperty Name="Product" ColumnName="Product" />

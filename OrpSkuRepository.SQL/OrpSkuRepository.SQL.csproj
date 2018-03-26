@@ -4,13 +4,28 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CDADF458-A07E-488B-A9D6-94AF9BDCDDB3}</ProjectGuid>
+    <ProjectGuid>{1EE80658-96DB-4A5C-A01A-A2CDB3EF2949}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrpSkuRepository.SQL</RootNamespace>
-    <AssemblyName>OrpSkuRepository.SQL</AssemblyName>
+    <RootNamespace>OrpSkuRepository.Sql</RootNamespace>
+    <AssemblyName>OrpSkuRepository.Sql</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,30 +64,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrpSkuDbModel.Context.cs">
+    <Compile Include="OrpSkuInventoryModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrpSkuDbModel.Context.tt</DependentUpon>
+      <DependentUpon>OrpSkuInventoryModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrpSkuDbModel.cs">
+    <Compile Include="OrpSkuInventoryModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrpSkuDbModel.tt</DependentUpon>
+      <DependentUpon>OrpSkuInventoryModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrpSkuDbModel.Designer.cs">
+    <Compile Include="OrpSkuInventoryModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrpSkuDbModel.edmx</DependentUpon>
+      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="SKU_DB.cs">
-      <DependentUpon>OrpSkuDbModel.tt</DependentUpon>
+    <Compile Include="SkuInventoryDb.cs">
+      <DependentUpon>OrpSkuInventoryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OrpSkuRepository.Interface\OrpSkuRepository.Interface.csproj">
-      <Project>{3ECE3832-B7A1-4CB0-8BCE-1DE11F51FDA1}</Project>
+      <Project>{3ece3832-b7a1-4cb0-8bce-1de11f51fda1}</Project>
       <Name>OrpSkuRepository.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\OrpSkuViewer.SharedObjects\OrpSkuViewer.SharedObjects.csproj">
@@ -81,29 +96,48 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="OrpSkuDbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OrpSkuDbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="OrpSkuDbModel.edmx.diagram">
-      <DependentUpon>OrpSkuDbModel.edmx</DependentUpon>
+    <Content Include="OrpSkuInventoryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
+      <LastGenOutput>OrpSkuInventoryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OrpSkuInventoryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
+      <LastGenOutput>OrpSkuInventoryModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlDb\LocalOrpSkuInventoryDb.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlDb\LocalOrpSkuInventoryDb_log.ldf">
+      <DependentUpon>LocalOrpSkuInventoryDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="OrpSkuInventoryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrpSkuInventoryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OrpSkuInventoryModel.edmx.diagram">
+      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="OrpSkuDbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OrpSkuDbModel.Context.cs</LastGenOutput>
-      <DependentUpon>OrpSkuDbModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="OrpSkuDbModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrpSkuDbModel.edmx</DependentUpon>
-      <LastGenOutput>OrpSkuDbModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

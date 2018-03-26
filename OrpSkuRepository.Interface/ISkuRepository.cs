@@ -16,7 +16,5 @@ namespace OrpSkuRepository.Interface
         void UpdateSku(string orpSkuName, OrpSku updatedOrpSku);
 
         void DeleteSku(string orpSkuName);
-
-        void UpdateAllSku(IEnumerable<OrpSku> updatedOrpSku);
     }
 }
