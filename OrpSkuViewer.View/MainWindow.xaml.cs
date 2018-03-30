@@ -1,6 +1,5 @@
 ﻿using MahApps.Metro.Controls;
 using OrpSkuViewer.Presentation;
-
 using OrpSkuRepository.Sql;
 
 namespace OrpSkuViewer.View

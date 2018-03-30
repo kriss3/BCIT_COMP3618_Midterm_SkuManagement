@@ -13,9 +13,9 @@ namespace OrpSkuRepository.Sql
     {
         public void AddSku(OrpSku newOrpSku)
         {
-            using (var ctx = new OrpSkuInventoryEntities())
+            using (var ctx = new SkuInventoryEntities())
             {
-                if (GetSkuInventoryRecord(ctx, newOrpSku.OrpSkuName) != null)
+                if (getSkuInventoryRecord(ctx, newOrpSku.OrpSkuName) != null)
                     return;
 
                 var orpSku = new SkuInventoryDb()
@@ -36,9 +36,9 @@ namespace OrpSkuRepository.Sql
 
         public void DeleteSku(string orpSkuName)
         {
-            using (var ctx = new OrpSkuInventoryEntities())
+            using (var ctx = new SkuInventoryEntities())
             {
-                var foundSku = GetSkuInventoryRecord(ctx, orpSkuName);
+                var foundSku = getSkuInventoryRecord(ctx, orpSkuName);
                 if (foundSku == null)
                     return;
 
@@ -49,7 +49,7 @@ namespace OrpSkuRepository.Sql
 
         public IEnumerable<OrpSku> GetAllSku()
         {
-            using (var ctx = new OrpSkuInventoryEntities())
+            using (var ctx = new SkuInventoryEntities())
             {
                 var orpSkus = (from s in ctx.SkuInventoryDbs
                               select new OrpSku
@@ -73,7 +73,7 @@ namespace OrpSkuRepository.Sql
 
         public OrpSku GetSkuById(int orpSkuId)
         {
-            using (var ctx = new OrpSkuInventoryEntities())
+            using (var ctx = new SkuInventoryEntities())
             {
                 var skuResult = (from s in ctx.SkuInventoryDbs
                                  where s.ID == orpSkuId
@@ -96,20 +96,20 @@ namespace OrpSkuRepository.Sql
         {
             OrpSku orpSku = null;
 
-            using (var ctx = new OrpSkuInventoryEntities())
+            using (var ctx = new SkuInventoryEntities())
             {
-                var foundSku = GetSkuInventoryRecord(ctx, orpSkuName);
+                var foundSku = getSkuInventoryRecord(ctx, orpSkuName);
                 if (foundSku != null)
-                    orpSku = GetOrpSkuFromSkuInventory(foundSku);
+                    orpSku = getOrpSkuFromSkuInventory(foundSku);
             }
             return orpSku;
         }
 
         public void UpdateSku(string orpSkuName, OrpSku updatedOrpSku)
         {
-            using (var ctx = new OrpSkuInventoryEntities())
+            using (var ctx = new SkuInventoryEntities())
             {
-                var foundSku = GetSkuInventoryRecord(ctx, orpSkuName);
+                var foundSku = getSkuInventoryRecord(ctx, orpSkuName);
                 if (foundSku == null)
                     return;
 
@@ -128,7 +128,7 @@ namespace OrpSkuRepository.Sql
 
         #region Private Methods
 
-        private OrpSku GetOrpSkuFromSkuInventory(SkuInventoryDb skuInventory)
+        private OrpSku getOrpSkuFromSkuInventory(SkuInventoryDb skuInventory)
         {
             var orpSku = new OrpSku()
             {
@@ -145,7 +145,7 @@ namespace OrpSkuRepository.Sql
         }
 
 
-        private SkuInventoryDb GetSkuInventoryRecord(OrpSkuInventoryEntities ctx, string orpSkuName)
+        private SkuInventoryDb getSkuInventoryRecord(SkuInventoryEntities ctx, string orpSkuName)
         {
             SkuInventoryDb foundSku = null;
             foundSku = (from s in ctx.SkuInventoryDbs

@@ -13,10 +13,10 @@ namespace OrpSkuRepository.Sql
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OrpSkuInventoryEntities : DbContext
+    public partial class SkuInventoryEntities : DbContext
     {
-        public OrpSkuInventoryEntities()
-            : base("name=OrpSkuInventoryEntities")
+        public SkuInventoryEntities()
+            : base("name=SkuInventoryEntities")
         {
         }
     

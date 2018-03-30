@@ -9,7 +9,7 @@
         Title="ORP SKU Repository - Krzysztof Szczurowski" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="350"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListView Grid.Column="0" Margin="5" 
@@ -18,10 +18,10 @@
                   SelectedItem="{Binding SelectedSku}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="#CCCCCC" BorderThickness="1">
+                    <Border BorderBrush="#CCCCCC"  BorderThickness="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="80"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="3*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
@@ -36,12 +36,58 @@
                                 <Label Content="{Binding Product}"></Label>
                             </StackPanel>
                             <Label HorizontalAlignment="Right" Grid.Row="1" Grid.Column="2" ></Label>
-
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Grid Grid.Column="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+         
+            <Label Grid.Row="1" Content="SKU ID" FontWeight="Bold"></Label>
+            <Label Grid.Row="2" Content="SKU Name" FontWeight="Bold"></Label>
+            <Label Grid.Row="3" Content="SKU Description" FontWeight="Bold"></Label>
+            <Label Grid.Row="4" Content="Product" FontWeight="Bold"></Label>
+            <Label Grid.Row="5" Content="SKU Term" FontWeight="Bold"></Label>
+            <Label Grid.Row="6" Content="Is In Use?" FontWeight="Bold"></Label>
+            <Label Grid.Row="7" Content="SKU Price" FontWeight="Bold"></Label>
+            <Label Grid.Row="8" Content="SKU MSRP Price" FontWeight="Bold"></Label>
+            <Label Grid.Row="9" Content="SKU Mfn Floor Price" FontWeight="Bold"></Label>
+            <Label Grid.Row="10" Content="Comment" FontWeight="Bold"></Label>
 
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding SelectedSku.OrpSkuId, Mode=OneWay}"></Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding SelectedSku.OrpSkuName, Mode=OneWay}"></Label>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding SelectedSku.OrpSkuDescription, Mode=OneWay}" TextWrapping="Wrap"></TextBlock>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding SelectedSku.Product, Mode=OneWay}"></Label>
+            <Label Grid.Row="5" Grid.Column="1" Content="{Binding SelectedSku.Term, Mode=OneWay}"></Label>
+            <Label Grid.Row="6" Grid.Column="1" Content="{Binding SelectedSku.InUse, Mode=OneWay}"></Label>
+            <Label Grid.Row="7" Grid.Column="1" Content="{Binding SelectedSku.SkuPrice, Mode=OneWay}"></Label>
+            <Label Grid.Row="8" Grid.Column="1" Content="{Binding SelectedSku.MsrpPrice, Mode=OneWay}"></Label>
+            <Label Grid.Row="9" Grid.Column="1" Content="{Binding SelectedSku.MfnFloorPrice, Mode=OneWay}"></Label>
+            <Label Grid.Row="10" Grid.Column="1" Content="{Binding SelectedSku.Comment, Mode=OneWay}"></Label>
+
+            <StackPanel Grid.Row="11" Orientation="Horizontal"  Grid.ColumnSpan="2" Margin="3">
+                <Button  Command="{Binding EditCommand}" Content="Edit SKU" Margin="3"></Button>
+                <Button  Command="{Binding EditCommand}" Content="Delete SKU" Margin="3"></Button>
+            </StackPanel>
+        </Grid>
+        
     </Grid>
 </Controls:MetroWindow>

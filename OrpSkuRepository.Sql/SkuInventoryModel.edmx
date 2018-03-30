@@ -4,22 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OrpSkuInventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view '1AF9B3490B0AFD78D2BE3F6E8AEB2E7A_\ASSIGNMENTS\MIDTERMPROJECT\ORPSKUMIDTERM\ORPSKUREPOSITORY.SQL\SQLDB\LOCALORPSKUINVENTORYDB.MDF.dbo.SkuInventoryDb' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="SkuInventoryDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="SkuInventoryDb">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="CreatedBy" />
-            <PropertyRef Name="CreatedUTC" />
-            <PropertyRef Name="ChangedUTC" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Item Description" Type="nvarchar" MaxLength="255" />
           <Property Name="Comment" Type="ntext" />
           <Property Name="Source" Type="nvarchar" MaxLength="100" />
           <Property Name="Item Number" Type="nvarchar" MaxLength="50" />
-          <Property Name="Product" Type="nvarchar" MaxLength="50" />
+          <Property Name="Product" Type="nvarchar" MaxLength="10" />
           <Property Name="Term" Type="int" />
           <Property Name="InUse" Type="nvarchar" MaxLength="50" />
           <Property Name="product_id" Type="int" />
@@ -37,52 +32,23 @@ warning 6002: The table/view '1AF9B3490B0AFD78D2BE3F6E8AEB2E7A_\ASSIGNMENTS\MIDT
           <Property Name="ChangedUTC" Type="datetime2" Precision="3" Nullable="false" />
           <Property Name="OrpProductId" Type="int" />
         </EntityType>
-        <EntityContainer Name="OrpSkuInventoryModelStoreContainer">
-          <EntitySet Name="SkuInventoryDb" EntityType="Self.SkuInventoryDb" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SkuInventoryDb].[ID] AS [ID], 
-    [SkuInventoryDb].[Item Description] AS [Item Description], 
-    [SkuInventoryDb].[Comment] AS [Comment], 
-    [SkuInventoryDb].[Source] AS [Source], 
-    [SkuInventoryDb].[Item Number] AS [Item Number], 
-    [SkuInventoryDb].[Product] AS [Product], 
-    [SkuInventoryDb].[Term] AS [Term], 
-    [SkuInventoryDb].[InUse] AS [InUse], 
-    [SkuInventoryDb].[product_id] AS [product_id], 
-    [SkuInventoryDb].[MfnFloorPrice] AS [MfnFloorPrice], 
-    [SkuInventoryDb].[LicenseTypeId] AS [LicenseTypeId], 
-    [SkuInventoryDb].[SkuTypeId] AS [SkuTypeId], 
-    [SkuInventoryDb].[DiscountTypeId] AS [DiscountTypeId], 
-    [SkuInventoryDb].[BaseSku] AS [BaseSku], 
-    [SkuInventoryDb].[SkuCategoryId] AS [SkuCategoryId], 
-    [SkuInventoryDb].[SkuPrice] AS [SkuPrice], 
-    [SkuInventoryDb].[MsrpPrice] AS [MsrpPrice], 
-    [SkuInventoryDb].[SkuCurrency] AS [SkuCurrency], 
-    [SkuInventoryDb].[CreatedBy] AS [CreatedBy], 
-    [SkuInventoryDb].[CreatedUTC] AS [CreatedUTC], 
-    [SkuInventoryDb].[ChangedUTC] AS [ChangedUTC], 
-    [SkuInventoryDb].[OrpProductId] AS [OrpProductId]
-    FROM [dbo].[SkuInventoryDb] AS [SkuInventoryDb]</DefiningQuery>
-          </EntitySet>
+        <EntityContainer Name="SkuInventoryDbModelStoreContainer">
+          <EntitySet Name="SkuInventoryDb" EntityType="Self.SkuInventoryDb" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="OrpSkuInventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SkuInventoryDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="SkuInventoryDb">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="CreatedBy" />
-            <PropertyRef Name="CreatedUTC" />
-            <PropertyRef Name="ChangedUTC" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Item_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Source" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Item_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Term" Type="Int32" />
           <Property Name="InUse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="product_id" Type="Int32" />
@@ -100,7 +66,7 @@ warning 6002: The table/view '1AF9B3490B0AFD78D2BE3F6E8AEB2E7A_\ASSIGNMENTS\MIDT
           <Property Name="ChangedUTC" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="OrpProductId" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="OrpSkuInventoryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SkuInventoryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SkuInventoryDbs" EntityType="Self.SkuInventoryDb" />
         </EntityContainer>
       </Schema>
@@ -108,9 +74,9 @@ warning 6002: The table/view '1AF9B3490B0AFD78D2BE3F6E8AEB2E7A_\ASSIGNMENTS\MIDT
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OrpSkuInventoryModelStoreContainer" CdmEntityContainer="OrpSkuInventoryEntities">
+        <EntityContainerMapping StorageEntityContainer="SkuInventoryDbModelStoreContainer" CdmEntityContainer="SkuInventoryEntities">
           <EntitySetMapping Name="SkuInventoryDbs">
-            <EntityTypeMapping TypeName="OrpSkuInventoryModel.SkuInventoryDb">
+            <EntityTypeMapping TypeName="SkuInventoryDbModel.SkuInventoryDb">
               <MappingFragment StoreEntitySet="SkuInventoryDb">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Item_Description" ColumnName="Item Description" />

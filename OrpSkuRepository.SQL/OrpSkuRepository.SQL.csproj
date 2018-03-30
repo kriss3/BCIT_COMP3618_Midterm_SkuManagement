@@ -64,23 +64,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrpSkuInventoryModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrpSkuInventoryModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrpSkuInventoryModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrpSkuInventoryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrpSkuInventoryModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="SkuInventoryDb.cs">
-      <DependentUpon>OrpSkuInventoryModel.tt</DependentUpon>
+      <DependentUpon>SkuInventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkuInventoryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SkuInventoryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkuInventoryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SkuInventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkuInventoryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SkuInventoryModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="SqlRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,39 +108,32 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OrpSkuInventoryModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
-      <LastGenOutput>OrpSkuInventoryModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="OrpSkuInventoryModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
-      <LastGenOutput>OrpSkuInventoryModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="SqlDb\LocalOrpSkuInventoryDb.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlDb\LocalOrpSkuInventoryDb_log.ldf">
-      <DependentUpon>LocalOrpSkuInventoryDb.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="OrpSkuInventoryModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OrpSkuInventoryModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="OrpSkuInventoryModel.edmx.diagram">
-      <DependentUpon>OrpSkuInventoryModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="SkuInventoryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SkuInventoryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SkuInventoryModel.edmx.diagram">
+      <DependentUpon>SkuInventoryModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SkuInventoryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SkuInventoryModel.edmx</DependentUpon>
+      <LastGenOutput>SkuInventoryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SkuInventoryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SkuInventoryModel.edmx</DependentUpon>
+      <LastGenOutput>SkuInventoryModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
