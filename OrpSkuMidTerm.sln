@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrpSkuViewer.SharedObjects"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrpSkuRepository.Sql", "OrpSkuRepository.Sql\OrpSkuRepository.Sql.csproj", "{1EE80658-96DB-4A5C-A01A-A2CDB3EF2949}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9B0B193C-EEE1-4C32-B706-6345B2544C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrpSkuViewer.Service", "OrpSkuViewer.Service\OrpSkuViewer.Service.csproj", "{6187468A-B5E4-4EED-97CC-D73E5D23CF8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{1EE80658-96DB-4A5C-A01A-A2CDB3EF2949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE80658-96DB-4A5C-A01A-A2CDB3EF2949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE80658-96DB-4A5C-A01A-A2CDB3EF2949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6187468A-B5E4-4EED-97CC-D73E5D23CF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6187468A-B5E4-4EED-97CC-D73E5D23CF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6187468A-B5E4-4EED-97CC-D73E5D23CF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6187468A-B5E4-4EED-97CC-D73E5D23CF8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{2FB624CE-D96C-425B-9789-8536356D4C98} = {7CC35B72-7759-4ED8-AAB2-6E851F03644C}
 		{FFAD2A41-C72C-439E-B2AA-604D5A873155} = {15855BB1-6517-4A64-9B9B-48755DA1245C}
 		{1EE80658-96DB-4A5C-A01A-A2CDB3EF2949} = {7CC35B72-7759-4ED8-AAB2-6E851F03644C}
+		{6187468A-B5E4-4EED-97CC-D73E5D23CF8D} = {9B0B193C-EEE1-4C32-B706-6345B2544C63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {662CAFAE-02BC-41AA-AC25-86B0E080684F}

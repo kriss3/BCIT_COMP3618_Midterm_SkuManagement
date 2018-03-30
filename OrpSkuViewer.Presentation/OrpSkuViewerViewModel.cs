@@ -24,7 +24,7 @@ namespace OrpSkuViewer.Presentation
                 if (_allSku == value)
                     return;
                 _allSku = value;
-                RaisePropertyChanged("AllSku");
+                raisePropertyChanged("AllSku");
             }
         }
 
@@ -34,18 +34,18 @@ namespace OrpSkuViewer.Presentation
             set
             {
                 _selectedSku = value;
-                RaisePropertyChanged("SelectedSku");
+                raisePropertyChanged("SelectedSku");
             }
         }
 
         public OrpSkuViewerViewModel(ISkuRepository repository)
         {
             _currentRepo = repository;
-            LoadData();
+            loadData();
 
         }
 
-        private void LoadData()
+        private void loadData()
         {
             AllSku = _currentRepo.GetAllSku();
         }
@@ -53,10 +53,9 @@ namespace OrpSkuViewer.Presentation
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
+        private void raisePropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         #endregion
