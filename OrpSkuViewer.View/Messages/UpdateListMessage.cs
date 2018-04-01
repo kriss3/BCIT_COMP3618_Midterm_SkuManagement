@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrpSkuViewer.Presentation
+namespace OrpSkuViewer.View.Messages
 {
-    public class OrpSkuViewerDetailViewModel
+    public class UpdateListMessage
     {
-
-
     }
 }

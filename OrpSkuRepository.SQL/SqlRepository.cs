@@ -57,7 +57,7 @@ namespace OrpSkuRepository.Sql
                                   OrpSkuId = s.ID,
                                   OrpSkuDescription = s.Item_Description,
                                   OrpSkuName = s.Item_Number,
-                                  
+                                  Comment = s.Comment,
                                   InUse = s.InUse,
                                   Term = s.Term.Value,
                                   Product = s.Product,
@@ -82,6 +82,7 @@ namespace OrpSkuRepository.Sql
                                      OrpSkuId = s.ID,
                                      OrpSkuName = s.Item_Number,
                                      OrpSkuDescription = s.Item_Description,
+                                     Comment = s.Comment,
                                      InUse = s.InUse,
                                      Term = s.Term.Value,
                                      Product = s.Product,
@@ -121,6 +122,7 @@ namespace OrpSkuRepository.Sql
                 foundSku.Product = updatedOrpSku.Product;
                 foundSku.SkuPrice = (decimal?)updatedOrpSku.SkuPrice;
                 foundSku.MsrpPrice = (decimal?)updatedOrpSku.MsrpPrice;
+                foundSku.Comment = updatedOrpSku.Comment;
 
                 ctx.SaveChanges();
             }
@@ -135,6 +137,7 @@ namespace OrpSkuRepository.Sql
                 OrpSkuId = skuInventory.ID,
                 OrpSkuName = skuInventory.Item_Number,
                 OrpSkuDescription = skuInventory.Item_Description,
+                Comment = skuInventory.Comment,
                 InUse = skuInventory.InUse,
                 Term = skuInventory.Term.Value,
                 Product = skuInventory.Product,
@@ -143,8 +146,6 @@ namespace OrpSkuRepository.Sql
             };
             return orpSku;
         }
-
-
         private SkuInventoryDb getSkuInventoryRecord(SkuInventoryEntities ctx, string orpSkuName)
         {
             SkuInventoryDb foundSku = null;

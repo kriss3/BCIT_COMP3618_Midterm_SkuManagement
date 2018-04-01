@@ -70,7 +70,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Messages\UpdateListMessage.cs" />
+    <Compile Include="Service\DialogService.cs" />
+    <Compile Include="Service\IDialogService.cs" />
+    <Compile Include="Utility\CustomCommand.cs" />
+    <Compile Include="Utility\Messenger.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModel\OrpSkuViewerDetailViewModel.cs" />
+    <Compile Include="ViewModel\OrpSkuViewerViewModel.cs" />
+    <Page Include="View\OrpSkuOverviewView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -78,12 +87,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="View\OrpSkuOverviewView.xaml.cs">
+      <DependentUpon>OrpSkuOverviewView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\OrpSkuDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\OrpSkuDetailView.xaml.cs">
+      <DependentUpon>OrpSkuDetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -121,9 +137,9 @@
       <Project>{1ee80658-96db-4a5c-a01a-a2cdb3ef2949}</Project>
       <Name>OrpSkuRepository.Sql</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OrpSkuViewer.Presentation\OrpSkuViewer.Presentation.csproj">
-      <Project>{4a2152c9-406f-475c-98fa-9bf308f6db2e}</Project>
-      <Name>OrpSkuViewer.Presentation</Name>
+    <ProjectReference Include="..\OrpSkuViewer.Service\OrpSkuViewer.Service.csproj">
+      <Project>{6187468a-b5e4-4eed-97cc-d73e5d23cf8d}</Project>
+      <Name>OrpSkuViewer.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\OrpSkuViewer.SharedObjects\OrpSkuViewer.SharedObjects.csproj">
       <Project>{FFAD2A41-C72C-439E-B2AA-604D5A873155}</Project>

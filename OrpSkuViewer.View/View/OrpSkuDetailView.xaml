@@ -1,0 +1,65 @@
+﻿<Controls:MetroWindow x:Class="OrpSkuViewer.View.OrpSkuDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:OrpSkuViewer.View"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource viewModelLocator},  Path=SkuViewDetailViewModel}"
+        Title="Orp SKU: Detail View" Height="400" Width="400">
+    <ScrollViewer>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold">Current ORP SKU Details</Label>
+            <Label Grid.Row="1" Content="SKU ID" FontWeight="Bold"></Label>
+            <Label Grid.Row="2" Content="SKU Name" FontWeight="Bold"></Label>
+            <Label Grid.Row="3" Content="SKU Description" FontWeight="Bold"></Label>
+            <Label Grid.Row="4" Content="SKU Product" FontWeight="Bold"></Label>
+            <Label Grid.Row="5" Content="SKU Term" FontWeight="Bold"></Label>
+            <Label Grid.Row="6" Content="Is In Use?" FontWeight="Bold"></Label>
+            <Label Grid.Row="7" Content="SKU Price" FontWeight="Bold"></Label>
+            <Label Grid.Row="8" Content="SKU MSRP Price" FontWeight="Bold"></Label>
+            <Label Grid.Row="9" Content="SKU Mfn Floor Price" FontWeight="Bold"></Label>
+            <Label Grid.Row="10" Content="Comment" FontWeight="Bold"></Label>
+
+            
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuId, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuName, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuDescription, Mode=TwoWay}" TextWrapping="Wrap"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SelectedOrpSku.Product, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SelectedOrpSku.Term, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedOrpSku.InUse, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedOrpSku.SkuPrice, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SelectedOrpSku.MsprPrice, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding SelectedOrpSku.MfnFloorPrice, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding SelectedOrpSku.Comment, Mode=TwoWay}" TextWrapping="WrapWithOverflow"></TextBox>
+            
+            
+           <!-- <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox> -->
+
+            <StackPanel Grid.Row="11" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+                <Button Margin="5" Content="Save coffee" Command="{Binding SaveCommand}"></Button>
+                <Button Margin="5" Content="Delete coffee" Command="{Binding DeleteCommand}"></Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Controls:MetroWindow>
