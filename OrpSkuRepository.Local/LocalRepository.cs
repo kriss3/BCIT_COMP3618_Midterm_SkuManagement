@@ -6,6 +6,13 @@ using System.Linq;
 
 namespace OrpSkuRepository.Local
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: Local repository class implementiong common inteface ISkuRepository (CRUD operations)
+    /// Can be substitued when SQL Repo is not available;
+    /// </summary>
     public class LocalRepository : ISkuRepository
     {
         private List<OrpSku> _localRepo = new List<OrpSku>();
@@ -48,7 +55,10 @@ namespace OrpSkuRepository.Local
 
         public void AddSku(OrpSku newOrpSku)
         {
-            _localRepo.Add(newOrpSku);
+            if(newOrpSku != null)
+            {
+                _localRepo.Add(newOrpSku);
+            }
         }
 
         public void DeleteSku(string orpSkuName)

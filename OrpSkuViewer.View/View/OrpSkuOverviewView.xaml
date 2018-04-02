@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:OrpSkuViewer.View"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource viewModelLocator},  Path=SkuViewModel}"
-        Title="ORP SKU Repository - Krzysztof Szczurowski" Height="450" Width="800">
+        Title="ORP SKU Repository - Krzysztof Szczurowski" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"></ColumnDefinition>

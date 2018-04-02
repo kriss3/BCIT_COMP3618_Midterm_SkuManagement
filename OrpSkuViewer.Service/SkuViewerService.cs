@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 namespace OrpSkuViewer.Service
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: WCF service supporting CRUD operations;
+    /// This service CAN be tested on its own => passthrough to the SQL Repository (DB operations)
+    /// </summary>
     public class SkuViewerService : ISkuViewer
     {
         private SqlRepository _repo;

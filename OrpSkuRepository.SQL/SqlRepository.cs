@@ -1,16 +1,20 @@
-﻿using System;
+﻿using OrpSkuRepository.Interface;
+using OrpSkuViewer.SharedObjects;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using OrpSkuRepository.Interface;
-using OrpSkuViewer.SharedObjects;
 
 namespace OrpSkuRepository.Sql
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: SQL Repository class to support database CRUD operations;
+    /// Implements common ISkuRepository;
+    /// </summary>
     public class SqlRepository : ISkuRepository
     {
+        #region Public CRUD Methods
         public void AddSku(OrpSku newOrpSku)
         {
             using (var ctx = new SkuInventoryEntities())
@@ -127,6 +131,7 @@ namespace OrpSkuRepository.Sql
                 ctx.SaveChanges();
             }
         }
+#endregion
 
         #region Private Methods
 

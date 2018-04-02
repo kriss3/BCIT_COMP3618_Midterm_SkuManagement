@@ -13,6 +13,13 @@ using System.Windows.Input;
 
 namespace OrpSkuViewer.ViewModel
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: viewModel class for OrpSkuViewerDetialView; this viewModel supports Saving and Deleting OrpSkus (SaveCommand, DeleteCommand);
+    /// This viewModel 'works' on SelectedSku passed via Messenger from OrpSkuViewerViewModel to OrpSkuViewerDetailViewModel;
+    /// </summary>
     public class OrpSkuViewerDetailViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

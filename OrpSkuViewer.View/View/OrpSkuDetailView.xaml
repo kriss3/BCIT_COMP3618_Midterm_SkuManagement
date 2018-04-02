@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:OrpSkuViewer.View"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource viewModelLocator},  Path=SkuViewDetailViewModel}"
-        Title="Orp SKU: Detail View" Height="400" Width="400">
+        Title="Orp SKU: Detail View" Height="400" Width="400" WindowStartupLocation="CenterScreen">
     <ScrollViewer>
         <Grid Margin="5">
             <Grid.ColumnDefinitions>
@@ -29,7 +29,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold">Current ORP SKU Details</Label>
+            <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold">Selected ORP SKU Details</Label>
             <Label Grid.Row="1" Content="SKU ID" FontWeight="Bold"></Label>
             <Label Grid.Row="2" Content="SKU Name" FontWeight="Bold"></Label>
             <Label Grid.Row="3" Content="SKU Description" FontWeight="Bold"></Label>
@@ -49,7 +49,7 @@
             <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SelectedOrpSku.Term, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedOrpSku.InUse, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedOrpSku.SkuPrice, Mode=TwoWay}"></TextBox>
-            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SelectedOrpSku.MsprPrice, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SelectedOrpSku.MsrpPrice, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding SelectedOrpSku.MfnFloorPrice, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding SelectedOrpSku.Comment, Mode=TwoWay}" TextWrapping="WrapWithOverflow"></TextBox>
             

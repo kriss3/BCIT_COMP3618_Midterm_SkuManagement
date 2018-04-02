@@ -1,5 +1,11 @@
 ﻿namespace OrpSkuViewer.SharedObjects
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: Base POCO class representing in-memory Order Processing SKU;
+    /// </summary>
     public class OrpSku
     {
         public int OrpSkuId { get; set; }

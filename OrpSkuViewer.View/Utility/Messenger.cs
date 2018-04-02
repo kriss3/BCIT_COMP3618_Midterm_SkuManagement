@@ -5,6 +5,14 @@ using System.Linq;
 
 namespace OrpSkuViewer.View.Utility
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: THIS IS NOT MY CLASS;
+    /// This class is used as a "communicator" between SKU Overview view and SKU DetailView view;
+    /// SelectedSku details are being passed via Send method to SKU DetailView;
+    /// </summary>
     public class Messenger
     {
         private static readonly object CreationLock = new object();

@@ -1,25 +1,13 @@
 ﻿using MahApps.Metro.Controls;
-using OrpSkuRepository.Sql;
-using OrpSkuViewer.Service;
-using OrpSkuViewer.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace OrpSkuViewer.View
 {
     /// <summary>
-    /// Interaction logic for OrpSkuDetailView.xaml
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: Interaction logic for OrpSkuDetailView.xaml;
+    /// Initially, data binding was here, in the class but after adding the second, SKU Detail view I have moved binding to XAML;
     /// </summary>
     public partial class OrpSkuDetailView : MetroWindow
     {

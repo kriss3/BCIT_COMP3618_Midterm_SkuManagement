@@ -10,6 +10,14 @@ using System.Windows.Input;
 
 namespace OrpSkuViewer.ViewModel
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: Main viewModel for the initial Window with a List of OrpSkus;
+    /// This viewModel support Edit and Clear methods;
+    /// This viewModel also is passing information of SelectedSku into the OrpSkuViewerDetailView;
+    /// </summary>
     public class OrpSkuViewerViewModel : INotifyPropertyChanged
     {
         protected ISkuRepository _currentRepo;
@@ -48,9 +56,10 @@ namespace OrpSkuViewer.ViewModel
             loadData();
             loadCommands();
             Messenger.Default.Register<UpdateListMessage>(this, onUpdateListMessageReceived);
-
         }
 
+        #region Private Methods
+        //Uses Extension method as GetAllSku() returns IEnumerable collection;
         private void loadData()
         {
             AllSku = _currentRepo.GetAllSku().ToObservableCollection();
@@ -68,6 +77,7 @@ namespace OrpSkuViewer.ViewModel
             loadData();
             _dialogService.CloseDetailDialog();
         }
+        #endregion
 
         #region INotifyPropertyChanged Members
 
