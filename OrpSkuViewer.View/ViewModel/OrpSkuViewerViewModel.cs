@@ -48,6 +48,7 @@ namespace OrpSkuViewer.ViewModel
         public ICommand EditCommand { get; set; }
         public ICommand ClearCommand { get; set; }
         public ICommand RefreshCommand { get; set; }
+        public ICommand NewSkuCommand { get; set; }
 
         public OrpSkuViewerViewModel(ISkuRepository repository, IDialogService dialogService)
         {
@@ -70,6 +71,7 @@ namespace OrpSkuViewer.ViewModel
             EditCommand = new CustomCommand(editOrpSku, canEditOrpSku);
             ClearCommand = new CustomCommand(clearAll, canClearAll);
             RefreshCommand = new CustomCommand(refreshAll, canRefreshAll);
+            NewSkuCommand = new CustomCommand(createNewSku, canCreateNewSku);
         }
 
         private void onUpdateListMessageReceived(UpdateListMessage obj)
@@ -98,12 +100,15 @@ namespace OrpSkuViewer.ViewModel
 
         private bool canRefreshAll(object obj)
         {
-            return true;
+            if(SelectedSku != null)
+                return true;
+            return false;
         }
 
         private void clearAll(object obj)
         {
-            this._allSku = new ObservableCollection<OrpSku>();
+            var t = 0;
+            AllSku = new ObservableCollection<OrpSku>();
         }
 
         private bool canClearAll(object obj)
@@ -124,6 +129,18 @@ namespace OrpSkuViewer.ViewModel
             return false;
         }
 
+        private void createNewSku(object obj)
+        {
+            //create new OrpSku
+            Messenger.Default.Send<OrpSku>(new OrpSku());
+            _dialogService.ShowDetailDialog();
+        }
+        private bool canCreateNewSku(object obj)
+        {
+            if (SelectedSku != null)
+                return true;
+            return false;
+        }
         #endregion Commands
     }
 }

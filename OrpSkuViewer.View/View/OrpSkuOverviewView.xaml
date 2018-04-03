@@ -86,7 +86,8 @@
 
             <StackPanel Grid.Row="11" Orientation="Horizontal"  Grid.ColumnSpan="2" Margin="3" HorizontalAlignment="Right">
                 <Button  Command="{Binding EditCommand}" Content="Edit SKU" Margin="3"></Button>
-                <Button  Command="{Binding RefreshCommand}" Content="Refresh SKU" Margin="3"></Button>
+                <Button  Command="{Binding NewSkuCommand}" Content="New SKU" Margin="3"></Button>
+                <Button  Command="{Binding ClearCommand}" Content="Clear List" Margin="3"></Button>
             </StackPanel>
         </Grid>
         
