@@ -1,4 +1,5 @@
-﻿using Quartz;
+﻿using OrpSkuViewer.ViewModel;
+using Quartz;
 using Quartz.Impl;
 
 namespace OrpSkuViewer.View.Scheduler
@@ -13,7 +14,7 @@ namespace OrpSkuViewer.View.Scheduler
     /// </summary>
     public class Config
     {
-        public static async void Run(OrpSkuViewer.ViewModel.OrpSkuViewerViewModel vm)
+        public static async void Run(OrpSkuViewerViewModel vm)
         {
             //Construct scheduler factory;
             ISchedulerFactory schFactory = new StdSchedulerFactory();
