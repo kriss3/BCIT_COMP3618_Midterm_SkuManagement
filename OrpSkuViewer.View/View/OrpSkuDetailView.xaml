@@ -52,9 +52,6 @@
             <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SelectedOrpSku.MsrpPrice, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding SelectedOrpSku.MfnFloorPrice, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding SelectedOrpSku.Comment, Mode=TwoWay}" TextWrapping="WrapWithOverflow"></TextBox>
-            
-            
-           <!-- <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox> -->
 
             <StackPanel Grid.Row="11" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Right">
                 <Button Margin="5" Content="Save SKU" Command="{Binding SaveCommand}"></Button>
