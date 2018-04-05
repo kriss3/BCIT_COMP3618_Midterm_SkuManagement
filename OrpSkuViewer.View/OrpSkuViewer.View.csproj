@@ -46,9 +46,14 @@
     <Reference Include="MahApps.Metro, Version=1.6.1.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.1\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Quartz, Version=3.0.4.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.3.0.4\lib\net452\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -72,6 +77,8 @@
     </ApplicationDefinition>
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Messages\UpdateListMessage.cs" />
+    <Compile Include="Scheduler\Config.cs" />
+    <Compile Include="Scheduler\SimpleJob.cs" />
     <Compile Include="Service\DialogService.cs" />
     <Compile Include="Service\IDialogService.cs" />
     <Compile Include="Utility\CustomCommand.cs" />

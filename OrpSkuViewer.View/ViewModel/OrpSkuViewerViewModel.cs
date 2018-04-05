@@ -7,6 +7,7 @@ using OrpSkuViewer.View.Utility;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using OrpSkuViewer.View.Scheduler;
 
 namespace OrpSkuViewer.ViewModel
 {
@@ -57,6 +58,7 @@ namespace OrpSkuViewer.ViewModel
             loadData();
             loadCommands();
             Messenger.Default.Register<UpdateListMessage>(this, onUpdateListMessageReceived);
+            Config.Run(this);
         }
 
         #region Private Methods

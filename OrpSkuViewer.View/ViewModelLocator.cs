@@ -21,17 +21,9 @@ namespace OrpSkuViewer.View
     {
         private static IDialogService _dialogService = new DialogService();
         private static ISkuRepository _skuRepository = new SqlRepository();
-        private static OrpSkuViewerDetailViewModel _skuViewDetailViewModel = new OrpSkuViewerDetailViewModel(_skuRepository, _dialogService);
-
 
         public static OrpSkuViewerViewModel SkuViewModel { get; } = new OrpSkuViewerViewModel(_skuRepository, _dialogService);
 
-        public static OrpSkuViewerDetailViewModel SkuViewDetailViewModel
-        {
-            get
-            {
-                return _skuViewDetailViewModel;
-            }
-        }
+        public static OrpSkuViewerDetailViewModel SkuViewDetailViewModel { get; } = new OrpSkuViewerDetailViewModel(_skuRepository, _dialogService);
     }
 }
