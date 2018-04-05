@@ -47,7 +47,7 @@ namespace OrpSkuViewer.ViewModel
         }
         public ICommand EditCommand { get; set; }
         public ICommand ClearCommand { get; set; }
-        public ICommand RefreshCommand { get; set; }
+        public ICommand LoadCommand { get; set; }
         public ICommand NewSkuCommand { get; set; }
 
         public OrpSkuViewerViewModel(ISkuRepository repository, IDialogService dialogService)
@@ -70,7 +70,7 @@ namespace OrpSkuViewer.ViewModel
         {
             EditCommand = new CustomCommand(editOrpSku, canEditOrpSku);
             ClearCommand = new CustomCommand(clearAll, canClearAll);
-            RefreshCommand = new CustomCommand(refreshAll, canRefreshAll);
+            LoadCommand = new CustomCommand(loadData, canLoadData);
             NewSkuCommand = new CustomCommand(createNewSku, canCreateNewSku);
         }
 
@@ -93,21 +93,20 @@ namespace OrpSkuViewer.ViewModel
 
         #region Commands
 
-        private void refreshAll(object obj)
+        private void loadData(object obj)
         {
-            _allSku = this._currentRepo.GetAllSku().ToObservableCollection();
+            AllSku = this._currentRepo.GetAllSku().ToObservableCollection();
         }
 
-        private bool canRefreshAll(object obj)
+        private bool canLoadData(object obj)
         {
-            if(SelectedSku != null)
+            if(AllSku.Count == 0)
                 return true;
             return false;
         }
 
         private void clearAll(object obj)
         {
-            var t = 0;
             AllSku = new ObservableCollection<OrpSku>();
         }
 

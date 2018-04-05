@@ -42,7 +42,7 @@
             <Label Grid.Row="10" Content="Comment" FontWeight="Bold"></Label>
 
             
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuId, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuId, Mode=OneWay}" IsReadOnly="True"></TextBox>
             <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuName, Mode=TwoWay}"></TextBox>
             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedOrpSku.OrpSkuDescription, Mode=TwoWay}" TextWrapping="Wrap"></TextBox>
             <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SelectedOrpSku.Product, Mode=TwoWay}"></TextBox>
@@ -57,8 +57,8 @@
            <!-- <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox> -->
 
             <StackPanel Grid.Row="11" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Right">
-                <Button Margin="5" Content="Save coffee" Command="{Binding SaveCommand}"></Button>
-                <Button Margin="5" Content="Delete coffee" Command="{Binding DeleteCommand}"></Button>
+                <Button Margin="5" Content="Save SKU" Command="{Binding SaveCommand}"></Button>
+                <Button Margin="5" Content="Delete SKU" Command="{Binding DeleteCommand}"></Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>

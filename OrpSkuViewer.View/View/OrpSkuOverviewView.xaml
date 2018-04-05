@@ -88,6 +88,7 @@
                 <Button  Command="{Binding EditCommand}" Content="Edit SKU" Margin="3"></Button>
                 <Button  Command="{Binding NewSkuCommand}" Content="New SKU" Margin="3"></Button>
                 <Button  Command="{Binding ClearCommand}" Content="Clear List" Margin="3"></Button>
+                <Button  Command="{Binding LoadCommand}" Content="Load Data" Margin="3"></Button>
             </StackPanel>
         </Grid>
         
