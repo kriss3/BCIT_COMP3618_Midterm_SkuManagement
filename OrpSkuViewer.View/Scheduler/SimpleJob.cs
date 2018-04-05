@@ -6,6 +6,12 @@ using Quartz;
 
 namespace OrpSkuViewer.View.Scheduler
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: SimpleJob class implements IJob interface and Execute method that will actually do the job of setting viewModel property
+    /// </summary>
     public class SimpleJob : IJob
     {
         public Task Execute(IJobExecutionContext context)

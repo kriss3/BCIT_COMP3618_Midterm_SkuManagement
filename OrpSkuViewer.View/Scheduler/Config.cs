@@ -3,6 +3,14 @@ using Quartz.Impl;
 
 namespace OrpSkuViewer.View.Scheduler
 {
+    /// <summary>
+    /// BCIT COMP3618 
+    /// Krzysztof Szczurowski Midterm Project
+    /// Repo: https://github.com/kriss3/BCIT_COMP3618_Midterm_SkuManagement.git
+    /// Description: Setup class containing executable async running method Run()
+    /// Run method will simply set base viewModel AllSku property to an empty ObservableCollection<OrpSku>
+    /// This class contains configuration of interval, how often the job will repeat;
+    /// </summary>
     public class Config
     {
         public static async void Run(OrpSkuViewer.ViewModel.OrpSkuViewerViewModel vm)
